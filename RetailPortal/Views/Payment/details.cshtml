@@ -1,0 +1,31 @@
+﻿@model RetailPortal.Models.Payment
+
+@{
+    ViewData["Title"] = "Payment Details";
+}
+
+<h2>Payment Details</h2>
+
+<div>
+    <h4>Card Number</h4>
+    <p>@Model.CardNumber</p>
+</div>
+<div>
+    <h4>Expiry Date</h4>
+    <p>@Model.ExpiryDate?.ToString("yyyy-MM")</p>
+</div>
+<div>
+    <h4>CVV</h4>
+    <p>@Model.CVV</p>
+</div>
+<div>
+    <h4>Payment Amount</h4>
+    <p>@Model.PaymentAmount</p>
+</div>
+<div>
+    <h4>Payment Date</h4>
+    <p>@Model.PaymentDate.ToString("yyyy-MM-dd")</p>
+</div>
+
+<a href="@Url.Action("Edit", new { id = Model.PaymentID })" class="btn btn-primary">Edit</a>
+<a href="@Url.Action("Index")" class="btn btn-secondary">Back to List</a>

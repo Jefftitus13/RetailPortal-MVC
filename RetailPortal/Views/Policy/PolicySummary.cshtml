@@ -1,0 +1,38 @@
+﻿@model RetailPortal.Models.PolicyDetails
+
+<h2>Selected Policy Summary</h2>
+
+<div>
+    <h4>Policy Details</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            Policy Number
+        </dt>
+        <dd class="col-sm-10">
+            @Model.PolicyNumber
+        </dd>
+        <dt class="col-sm-2">
+            Policy Type
+        </dt>
+        <dd class="col-sm-10">
+            @Model.PolicyType
+        </dd>
+        <dt class="col-sm-2">
+            Coverage Amount
+        </dt>
+        <dd class="col-sm-10">
+            @Model.CoverageAmount
+        </dd>
+        <dt class="col-sm-2">
+            Premium Amount
+        </dt>
+        <dd class="col-sm-10">
+            @Model.PremiumAmount
+        </dd>
+    </dl>
+</div>
+
+<form asp-action="ProceedToMemberDetails" method="post">
+    <button type="submit" class="btn btn-primary">Next: Member Details</button>
+</form>

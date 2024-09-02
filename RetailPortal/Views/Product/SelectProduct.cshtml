@@ -1,0 +1,36 @@
+﻿@model IEnumerable<RetailPortal.Models.ProductDetails>
+
+<h2>Select a Product</h2>
+
+<div class = "container">
+    <table class = "table">
+        <thread>
+            <tr>
+                <th>Select</th>
+                <th>Product Name</th>
+                <th>Product Type</th>
+                <th>Coverage Amount</th>
+                <th>Premium Amount</th>
+                <th>Effective Date</th>
+                <th>Expiry Date</th>
+            </tr>
+        </thread>
+        <tbody>
+            @foreach (var product in Model)
+            {
+                <tr>
+                    <td>
+                        <input type="radio" name="productId" value="@product.ProductID" />
+                    </td>
+                    <td>@product.ProductName</td>
+                    <td>@product.ProductType</td>
+                    <td>@product.CoverageAmount</td>
+                    <td>@product.PremiumAmount</td>
+                    <td>@product.EffectiveDate?.ToShortDateString()</td>
+                    <td>@product.ExpiryDate?.ToShortDateString()</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+    <button type="submit" class="btn btn-primary">Save and Continue</button>
+</div>

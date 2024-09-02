@@ -1,0 +1,32 @@
+﻿@model RetailPortal.Models.Payment
+
+@{
+    ViewData["Title"] = Model.PaymentID == 0 ? "Create Payment" : "Edit Payment";
+}
+
+<h2>@ViewData["Title"]</h2>
+
+<form asp-action="@(Model.PaymentID == 0 ? "Create" : "Edit")">
+    <div class="form-group">
+        <label for="CardNumber">Card Number</label>
+        <input type="text" class="form-control" id="CardNumber" name="CardNumber" value="@Model.CardNumber" required />
+    </div>
+    <div class="form-group">
+        <label for="ExpiryDate">Expiry Date</label>
+        <input type="month" class="form-control" id="ExpiryDate" name="ExpiryDate" value="@Model.ExpiryDate?.ToString("yyyy-MM")" required />
+    </div>
+    <div class="form-group">
+        <label for="CVV">CVV</label>
+        <input type="text" class="form-control" id="CVV" name="CVV" value="@Model.CVV" required />
+    </div>
+    <div class="form-group">
+        <label for="PaymentAmount">Payment Amount</label>
+        <input type="number" class="form-control" id="PaymentAmount" name="PaymentAmount" value="@Model.PaymentAmount" required />
+    </div>
+    <div class="form-group">
+        <label for="PaymentDate">Payment Date</label>
+        <input type="date" class="form-control" id="PaymentDate" name="PaymentDate" value="@Model.PaymentDate.ToString("yyyy-MM-dd")" required />
+    </div>
+    <button type="submit" class="btn btn-primary">@ViewData["Title"]</button>
+    <a href="@Url.Action("Index")" class="btn btn-secondary">Back to List</a>
+</form>

@@ -1,0 +1,39 @@
+﻿@model IEnumerable<RetailPortal.Models.Payment>
+
+@{
+    ViewData["Title"] = "Payments";
+}
+
+<h2>Payments</h2>
+
+<p>
+    <a href="@Url.Action("Create")" class="btn btn-primary">Create New Payment</a>
+</p>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Card Number</th>
+            <th>Expiry Date</th>
+            <th>Payment Amount</th>
+            <th>Payment Date</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var payment in Model)
+        {
+            <tr>
+                <td>@payment.CardNumber</td>
+                <td>@payment.ExpiryDate?.ToString("yyyy-MM")</td>
+                <td>@payment.PaymentAmount</td>
+                <td>@payment.PaymentDate.ToString("yyyy-MM-dd")</td>
+                <td>
+                    <a href="@Url.Action("Edit", new { id = payment.PaymentID })" class="btn btn-secondary">Edit</a> |
+                    <a href="@Url.Action("Details", new { id = payment.PaymentID })" class="btn btn-info">Details</a> |
+                    <a href="@Url.Action("Delete", new { id = payment.PaymentID })" class="btn btn-danger">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

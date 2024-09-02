@@ -1,0 +1,42 @@
+﻿@model IEnumerable<RetailPortal.Models.MemberDetails>
+
+@{
+    ViewData["Title"] = "Member Details";
+}
+
+<h2>Member Details</h2>
+
+<p>
+    <a href="@Url.Action("Create")" class="btn btn-primary">Create New Member</a>
+</p>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Member Name</th>
+            <th>Phone Number</th>
+            <th>Gender</th>
+            <th>State</th>
+            <th>District</th>
+            <th>Relationship to Policyholder</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var member in Model)
+        {
+            <tr>
+                <td>@member.MemberName</td>
+                <td>@member.PhoneNumber</td>
+                <td>@member.Gender</td>
+                <td>@member.State</td>
+                <td>@member.District</td>
+                <td>@member.RelationshipToPolicyholder</td>
+                <td>
+                    <a href="@Url.Action("Edit", new { id = member.MemberId })" class="btn btn-secondary">Edit</a> |
+                    <a href="@Url.Action("Delete", new { id = member.MemberId })" class="btn btn-danger">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

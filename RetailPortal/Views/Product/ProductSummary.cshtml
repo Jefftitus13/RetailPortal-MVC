@@ -1,0 +1,16 @@
+﻿@model ProductDetails
+
+<h2>Product Summary</h2>
+
+<div>
+    <p><strong>Product Name:</strong> @Model.ProductName</p>
+    <p><strong>Product Type:</strong> @Model.ProductType</p>
+    <p><strong>Coverage Amount:</strong> @Model.CoverageAmount</p>
+    <p><strong>Premium Amount:</strong> @Model.PremiumAmount</p>
+    <p><strong>Effective Date:</strong> @Model.EffectiveDate?.ToShortDateString()</p>
+    <p><strong>Expiry Date:</strong> @Model.ExpiryDate?.ToShortDateString()</p>
+</div>
+
+<form asp-action="ProceedToPayment" method="post">
+    <button type="submit" class="btn btn-primary">Proceed to Payment</button>
+</form>

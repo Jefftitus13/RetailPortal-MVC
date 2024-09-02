@@ -1,0 +1,34 @@
+﻿@{
+    ViewBag.Title = "Login";
+}
+<style>
+    .div1{
+        width: 200px;
+        height: 40px;
+        border: 1px solid #a11b1b;
+    }
+    .div2{
+        width: 200px;
+        height: 40px;
+        border: 1px solid #a11b1b;
+    }
+</style>
+
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <h2>Login</h2>
+            <form asp-action="Login" method="post">
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" class="form-control div1" id="email" name="Email" required>
+                </div>
+                <div class="form-group">
+                    <label for="phone">Phone Number</label>
+                    <input type="tel" class="form-control div2" id="phone" name="Phone" required>
+                </div>
+                <button type="submit" class="btn next-button">Proceed</button>
+            </form>
+        </div>
+    </div>
+</div>
