@@ -6,7 +6,8 @@ This repository contains an MVC-based retail portal designed specifically for an
 ## Technology Stack
 1. ASP.NET MVC: The application is built using the ASP.NET MVC framework, providing a robust and scalable architecture.
 2. ADO.NET: Database interactions are handled using ADO.NET, ensuring efficient data retrieval and manipulation.
-3. Stored Procedures: The application leverages stored procedures for all database operations, enhancing performance, security, and maintainability.
+3. Razor Pages: Utilized for building specific views and user interfaces within the application, offering a streamlined approach to server-side rendering.
+4. Stored Procedures: The application leverages stored procedures for all database operations, enhancing performance, security, and maintainability.
 
 ## Features
 1. Full CRUD Operations: Users can perform Create, Read, Update, and Delete operations across various modules, including:
