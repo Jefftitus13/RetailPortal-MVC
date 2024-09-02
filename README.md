@@ -1,4 +1,4 @@
-# Retail Portal MVC Project
+# Safe Havens MVC Project
 
 ## Project Overview
 This repository contains an MVC-based retail portal designed specifically for an insurance application system. The project aims to provide a comprehensive solution for managing various aspects of insurance-related data.
