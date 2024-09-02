@@ -99,5 +99,11 @@ namespace RetailPortal.Controllers
             _repository.DeleteSponsorDetails(id);
             return RedirectToAction(nameof(Index));
         }
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public IActionResult Next()
+        {
+            return RedirectToAction("Policy");
+        }
     }
 }
