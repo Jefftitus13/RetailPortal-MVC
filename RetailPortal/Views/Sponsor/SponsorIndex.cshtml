@@ -1,45 +1,4 @@
-﻿@* @model IEnumerable<RetailPortal.Models.SponsorDetails>
-
-@{
-    ViewData["Title"] = "Sponsor Details";
-}
-
-<h2>Sponsor Details</h2>
-
-<p>
-    <a href="@Url.Action("Create")" class="btn btn-primary">Create New Sponsor</a>
-</p>
-
-<table class="table">
-    <thead>
-        <tr>
-            <th>Sponsor Name</th>
-            <th>Sponsor Email</th>
-            <th>Phone Number</th>
-            <th>Date of Birth</th>
-            <th>Gender</th>
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
-        @foreach (var sponsor in Model)
-        {
-            <tr>
-                <td>@sponsor.SponsorName</td>
-                <td>@sponsor.SponsorEmail</td>
-                <td>@sponsor.PhoneNumber</td>
-                <td>@sponsor.DateOfBirth?.ToShortDateString()</td>
-                <td>@sponsor.Gender</td>
-                <td>
-                    <a href="@Url.Action("Edit", new { id = sponsor.SponsorId })" class="btn btn-secondary">Edit</a> |
-                    <a href="@Url.Action("Delete", new { id = sponsor.SponsorId })" class="btn btn-danger">Delete</a>
-                </td>
-            </tr>
-        }
-    </tbody>
-</table> *@
-
-@model IEnumerable<RetailPortal.Models.SponsorDetails>
+﻿@model IEnumerable<RetailPortal.Models.SponsorDetails>
 
 @{
     ViewData["Title"] = "Sponsor Details";
