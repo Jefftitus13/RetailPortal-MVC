@@ -36,11 +36,14 @@ namespace RetailPortal.Controllers
             if (ModelState.IsValid)
             {
                 _repository.AddSponsorDetails(sponsor);
-                return View("SponsorCreate");
             }
-            return RedirectToAction("SelectPolicy", "Policy");
+            return View("SponsorCreate");
         }
-        
+        [HttpPost]
+        public IActionResult Next()
+        {
+            return RedirectToAction("Index", "Policy");
+        }
 
     }
 
