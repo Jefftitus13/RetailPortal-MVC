@@ -16,7 +16,7 @@ namespace RetailPortal.Controllers
     }
 
     // GET: Policy/Select
-    public IActionResult Select()
+    public IActionResult SelectPolicy()
     {
             var sponsorDetailsJson = TempData["SponsorDetails"] as string;
             if (sponsorDetailsJson == null)
