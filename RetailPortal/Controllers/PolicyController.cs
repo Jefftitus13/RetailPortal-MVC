@@ -56,11 +56,11 @@ namespace RetailPortal.Controllers
             TempData["PolicyDetails"] = JsonConvert.SerializeObject(policyDetails);
             TempData["SponsorDetails"] = JsonConvert.SerializeObject(sponsorDetails);
             
-            return RedirectToAction("Summary");
+            return RedirectToAction("PolicySummary");
     }
 
     // GET: Policy/Summary
-    public IActionResult Summary()
+    public IActionResult PolicySummary()
     {
         // Retrieve the selected policy details from TempData
         var policyDetailsJson = TempData["PolicyDetails"] as string;
@@ -68,7 +68,7 @@ namespace RetailPortal.Controllers
 
             if (policyDetailsJson == null || sponsorDetailsJson == null)
             {
-                return RedirectToAction("Select");
+                return RedirectToAction("SelectPolicy");
             }
 
             var policyDetails = JsonConvert.DeserializeObject<PolicyDetails>(policyDetailsJson);
@@ -80,7 +80,7 @@ namespace RetailPortal.Controllers
                 SponsorDetails = sponsorDetails
             };
 
-            return View("Summary", viewModel);
+            return View("PolicySummary", viewModel);
         }
 
     // POST: Policy/ProceedToMemberDetails
@@ -93,7 +93,7 @@ namespace RetailPortal.Controllers
 
             if (policyDetailsJson == null || sponsorDetailsJson == null)
             {
-                return RedirectToAction("Select");
+                return RedirectToAction("SelectPolicy");
             }
 
             // Optionally, store the details again in TempData if they need to be passed to the next action

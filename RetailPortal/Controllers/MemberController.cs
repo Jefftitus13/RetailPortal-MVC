@@ -15,7 +15,7 @@ namespace RetailPortal.Controllers
         }
 
         // GET: Member
-        public IActionResult Index()
+        public IActionResult MemberIndex()
         {
             var members = _repository.GetMemberDetails().ToList();
             return View("MemberIndex",members);
@@ -33,7 +33,7 @@ namespace RetailPortal.Controllers
         }
 
         // GET: Member/Create
-        public IActionResult Create()
+        public IActionResult MemberCreate()
         {
             return View("MemberCreate");
         }
@@ -41,18 +41,18 @@ namespace RetailPortal.Controllers
         // POST: Member/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public IActionResult Create(MemberDetails member)
+        public IActionResult MemberCreate(MemberDetails member)
         {
             if (ModelState.IsValid)
             {
                 _repository.AddMemberDetails(member);
-                return RedirectToAction("ProductDetails");
+                return RedirectToAction("SelectProduct");
             }
             return View(member);
         }
 
         // GET: Member/Edit/5
-        public IActionResult Edit(int id)
+        public IActionResult MemberEdit(int id)
         {
             var member = _repository.GetMemberDetails().FirstOrDefault(m => m.MemberId == id);
             if (member == null)
@@ -65,7 +65,7 @@ namespace RetailPortal.Controllers
         // POST: Member/Edit/5
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public IActionResult Edit(int id, MemberDetails member)
+        public IActionResult MemberEdit(int id, MemberDetails member)
         {
             if (id != member.MemberId)
             {
