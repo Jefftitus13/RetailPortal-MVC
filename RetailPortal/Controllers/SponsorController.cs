@@ -39,7 +39,7 @@ namespace RetailPortal.Controllers
             }
             return View("SponsorCreate");
         }
-        [HttpPost]
+        
         public IActionResult Next()
         {
             return RedirectToAction("Index", "Policy");
